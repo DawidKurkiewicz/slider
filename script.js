@@ -18,8 +18,9 @@ const time = 5000;
 let active = 0;
 
 const changeDot = () => {
-const activeDot = dots.findIndex(dot => dot.classLost.contains("active"));
+const activeDot = dots.findIndex(dot => dot.classList.contains("active"));
 dots[activeDot].classList.remove("active")
+dots[active].classList.add("active")
 }
 
 const changeSlide = () => {
@@ -33,3 +34,25 @@ const changeSlide = () => {
 }
 
 setInterval(changeSlide, time)
+const first = () => {
+    active = 0;
+    image.src = slideList[active].img
+    h1.textContent = slideList[active].text
+    changeDot()
+}
+const second = () => {
+    active = 1;
+    image.src = slideList[active].img
+    h1.textContent = slideList[active].text
+    changeDot()
+}
+const third = () => {
+    active = 2;
+    image.src = slideList[active].img
+    h1.textContent = slideList[active].text
+    changeDot()
+}
+document.getElementById("one").addEventListener("click", first )
+document.getElementById("two").addEventListener("click", second )
+document.getElementById("three").addEventListener("click", third )
+
