@@ -13,8 +13,13 @@ const slideList = [{
 
 const image = document.querySelector("img.slider")
 const h1 = document.querySelector("h1.slider")
+const dots = [...document.querySelectorAll(".dots span")]
 const time = 5000;
 let active = 0;
+
+const changeDot = () => {
+
+}
 
 const changeSlide = () => {
     active++
@@ -23,6 +28,7 @@ const changeSlide = () => {
     }
     image.src = slideList[active].img
     h1.textContent = slideList[active].text
+    changeDot()
 }
 
 setInterval(changeSlide, time)
