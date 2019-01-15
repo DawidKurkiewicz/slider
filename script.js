@@ -18,7 +18,8 @@ const time = 5000;
 let active = 0;
 
 const changeDot = () => {
-
+const activeDot = dots.findIndex(dot => dot.classLost.contains("active"));
+dots[activeDot].classList.remove("active")
 }
 
 const changeSlide = () => {
