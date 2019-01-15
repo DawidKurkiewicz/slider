@@ -33,7 +33,6 @@ const changeSlide = () => {
     changeDot()
 }
 
-setInterval(changeSlide, time)
 const first = () => {
     active = 0;
     image.src = slideList[active].img
@@ -56,3 +55,10 @@ document.getElementById("one").addEventListener("click", first )
 document.getElementById("two").addEventListener("click", second )
 document.getElementById("three").addEventListener("click", third )
 
+setInterval(changeSlide, time)
+
+const keyChange = (e) => {
+
+}
+
+window.addEventListener("keydown", keyChange)
