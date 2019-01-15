@@ -34,31 +34,38 @@ const changeSlide = () => {
 }
 
 const first = () => {
+    clearInterval(indexInterval)
     active = 0;
     image.src = slideList[active].img
     h1.textContent = slideList[active].text
     changeDot()
+    indexInterval = setInterval(changeSlide, time)
 }
 const second = () => {
+    clearInterval(indexInterval)
     active = 1;
     image.src = slideList[active].img
     h1.textContent = slideList[active].text
     changeDot()
+    indexInterval = setInterval(changeSlide, time)
 }
 const third = () => {
+    clearInterval(indexInterval)
     active = 2;
     image.src = slideList[active].img
     h1.textContent = slideList[active].text
     changeDot()
+    indexInterval = setInterval(changeSlide, time)
 }
 document.getElementById("one").addEventListener("click", first)
 document.getElementById("two").addEventListener("click", second)
 document.getElementById("three").addEventListener("click", third)
 
-setInterval(changeSlide, time)
+let indexInterval = setInterval(changeSlide, time)
 
 const keyChange = (e) => {
     if (e.keyCode == 37 || e.keyCode == 39) {
+        clearInterval(indexInterval)
         e.keyCode == 37 ? active-- : active++
         if (active === slideList.length) {
             active = 0;
@@ -68,6 +75,7 @@ const keyChange = (e) => {
         image.src = slideList[active].img
         h1.textContent = slideList[active].text
         changeDot()
+        indexInterval = setInterval(changeSlide, time)
     }
 }
 
