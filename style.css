@@ -11,9 +11,6 @@
 
   img {
     position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -53,4 +50,8 @@
 
   .dots span.active {
     box-shadow: 0 0 0 5px white, 0 0 3px 10px red;
+  }
+  .imga{
+      width: 200px;
+      height: 200px
   }
